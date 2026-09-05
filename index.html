@@ -543,7 +543,22 @@ body.cv-on{background:#FAF7F2}
 @keyframes wLine{to{transform:scaleX(1);opacity:1}}
 #wl.bye .wlc{animation:wBye 1s cubic-bezier(.45,0,.55,1) forwards}
 @keyframes wBye{0%{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}100%{opacity:0;transform:translateY(-48px) scale(1.07);filter:blur(12px)}}
-@media(max-width:767px){.pecap{letter-spacing:.28em}}
+@media(max-width:767px){
+  .pebar i{animation-duration:1.05s!important}
+  .plt span{animation-duration:.4s!important}
+  .pecap{font-size:.82rem!important;letter-spacing:.22em!important;animation-delay:.15s!important}
+  .pelburst{width:10vmax!important;height:10vmax!important}
+  #wl.go .wley{animation-duration:.5s!important;animation-delay:.04s!important}
+  #wl.go .wlt span{animation-duration:.6s!important}
+  #wl.go .wlt span:nth-child(1){animation-delay:.02s}
+  #wl.go .wlt span:nth-child(2){animation-delay:.06s}
+  #wl.go .wlt span:nth-child(3){animation-delay:.10s}
+  #wl.go .wlt span:nth-child(4){animation-delay:.14s}
+  #wl.go .wlline{animation-duration:.5s!important;animation-delay:.3s!important}
+  #wl.go .wlsub{animation-duration:.6s!important;animation-delay:.38s!important}
+  .hbg{background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=75')!important}
+  .orb{filter:blur(50px)!important}
+}
 /* 3D tilt cards */
 .tilt3d{transform-style:preserve-3d;transition:transform .5s cubic-bezier(.16,1,.3,1)}
 .tilt3d:hover{box-shadow:0 30px 70px rgba(0,0,0,.18)}
@@ -838,42 +853,42 @@ body.cv-on{background:#FAF7F2}
           <div class="about-slider-track" id="aboutTrack">
             <!-- Slide 1 -->
             <div class="about-slide">
-              <img src="images/storefront.png" alt="Mặt tiền ấm cúng Hội An Lantern Spa &amp; Nail" width="600" height="520">
+              <img src="images/storefront.png" alt="Mặt tiền ấm cúng Hội An Lantern Spa &amp; Nail" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 2 -->
             <div class="about-slide">
-              <img src="images/customer-couple-fruit.png" alt="Khách quen thưởng thức dừa tươi &amp; trái cây" width="600" height="520">
+              <img src="images/customer-couple-fruit.png" alt="Khách quen thưởng thức dừa tươi &amp; trái cây" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 3 -->
             <div class="about-slide">
-              <img src="images/customer-friends.png" alt="Hai bạn khách quốc tế thư giãn sau giờ massage" width="600" height="520">
+              <img src="images/customer-friends.png" alt="Hai bạn khách quốc tế thư giãn sau giờ massage" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 4 -->
             <div class="about-slide">
-              <img src="images/customer-family-staff.png" alt="Đón tiếp chu đáo, thân thiện như người một nhà" width="600" height="520">
+              <img src="images/customer-family-staff.png" alt="Đón tiếp chu đáo, thân thiện như người một nhà" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 5 -->
             <div class="about-slide">
-              <img src="images/customer-group-coconut.png" alt="Cả gia đình cùng trải nghiệm massage thư giãn" width="600" height="520">
+              <img src="images/customer-group-coconut.png" alt="Cả gia đình cùng trải nghiệm massage thư giãn" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 6 -->
             <div class="about-slide">
-              <img src="images/customer-nail-mother-daughter.png" alt="Hai mẹ con cùng chăm sóc móng &amp; làm đẹp" width="600" height="520">
+              <img src="images/customer-nail-mother-daughter.png" alt="Hai mẹ con cùng chăm sóc móng &amp; làm đẹp" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 7 -->
             <div class="about-slide">
-              <img src="images/about-customers.png" alt="Không gian ấm áp dưới ánh đèn lồng Hội An" width="600" height="520">
+              <img src="images/about-customers.png" alt="Không gian ấm áp dưới ánh đèn lồng Hội An" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 8 -->
             <div class="about-slide">
-              <img src="images/about-nail.jpg" alt="Mẫu nail art hoa nổi đính đá tinh xảo tại tiệm" width="600" height="520">
+              <img src="images/about-nail.jpg" alt="Mẫu nail art hoa nổi đính đá tinh xảo tại tiệm" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
           </div>
@@ -1389,12 +1404,13 @@ function init3DSkyLanterns(){
   if(!cv || !window.THREE) return null;
   
   var w = window.innerWidth, h = window.innerHeight;
+  var mob = w < 768;
   var scene = new THREE.Scene();
   var cam = new THREE.PerspectiveCamera(46, w / h, 0.1, 80);
   cam.position.z = 10;
   
-  var ren = new THREE.WebGLRenderer({ canvas: cv, alpha: true, antialias: true, powerPreference: 'high-performance' });
-  ren.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var ren = new THREE.WebGLRenderer({ canvas: cv, alpha: true, antialias: !mob, powerPreference: 'high-performance' });
+  ren.setPixelRatio(mob ? 1.0 : Math.min(window.devicePixelRatio || 1, 1.75));
   ren.setSize(w, h, false);
   
   scene.add(new THREE.AmbientLight(0xFFE0B2, 0.52));
@@ -1402,7 +1418,7 @@ function init3DSkyLanterns(){
   dirLight.position.set(2, 6, 4);
   scene.add(dirLight);
 
-  // Shared 3D lathe lantern profile
+  // Shared 3D lathe lantern profile (optimized for mobile)
   var prof = [
     [.02, .92],
     [.28, .82],
@@ -1412,23 +1428,24 @@ function init3DSkyLanterns(){
     [.28, -.75],
     [.02, -.85]
   ].map(function(p){ return new THREE.Vector2(p[0], p[1]); });
-  var bodyGeo = new THREE.LatheGeometry(prof, 24);
+  var bodyGeo = new THREE.LatheGeometry(prof, mob ? 12 : 24);
   
-  var ribGeos = [[.28, .82], [.48, .50], [.55, .05], [.46, -.42], [.28, -.75]].map(function(r){
-    var tg = new THREE.TorusGeometry(r[0] + 0.009, 0.012, 6, 24);
+  var ribLevels = mob ? [[.48, .50], [.55, .05]] : [[.28, .82], [.48, .50], [.55, .05], [.46, -.42], [.28, -.75]];
+  var ribGeos = ribLevels.map(function(r){
+    var tg = new THREE.TorusGeometry(r[0] + 0.009, 0.012, 6, mob ? 12 : 24);
     tg.rotateX(Math.PI / 2);
     tg.translate(0, r[1], 0);
     return tg;
   });
   
-  var capTGeo = new THREE.CylinderGeometry(.13, .18, .10, 14);
+  var capTGeo = new THREE.CylinderGeometry(.13, .18, .10, mob ? 8 : 14);
   capTGeo.translate(0, .96, 0);
-  var capBGeo = new THREE.CylinderGeometry(.18, .13, .10, 14);
+  var capBGeo = new THREE.CylinderGeometry(.18, .13, .10, mob ? 8 : 14);
   capBGeo.translate(0, -.89, 0);
   
-  var tasselGeo = new THREE.CylinderGeometry(.016, .016, .44, 6);
+  var tasselGeo = new THREE.CylinderGeometry(.016, .016, .44, mob ? 4 : 6);
   tasselGeo.translate(0, -1.16, 0);
-  var knotGeo = new THREE.SphereGeometry(.05, 8, 6);
+  var knotGeo = new THREE.SphereGeometry(.05, mob ? 6 : 8, mob ? 4 : 6);
   knotGeo.translate(0, -1.40, 0);
 
   // Shared materials
@@ -1458,8 +1475,7 @@ function init3DSkyLanterns(){
 
   var glowTex = mkGlowSprite(1, .5).material.map;
 
-  var mob = w < 768;
-  var COUNT = mob ? 12 : 22;
+  var COUNT = mob ? 4 : 20;
   var lanterns = [];
 
   for(var i = 0; i < COUNT; i++){
@@ -1517,7 +1533,7 @@ function init3DSkyLanterns(){
 
   // Floating fireflies in 3D
   var emberSparks = [];
-  var EMBER_COUNT = mob ? 18 : 34;
+  var EMBER_COUNT = mob ? 8 : 34;
   for(var e = 0; e < EMBER_COUNT; e++){
     var esp = new THREE.Sprite(new THREE.SpriteMaterial({
       map: glowTex,
@@ -1602,18 +1618,30 @@ function init3DSkyLanterns(){
 (function(){
   var pre=document.getElementById('pre'),wl=document.getElementById('wl');
   var sky3dInstance = null;
+  var isMob = window.innerWidth < 768;
+
   function showHero(){
     document.body.classList.add('cv-on');
     document.querySelectorAll('.hero .pop3d').forEach(function(el,i){setTimeout(function(){el.classList.add('in');},i*110);});
     window.dispatchEvent(new Event('hero:shown'));
   }
   function killAll(){
-    if(sky3dInstance){sky3dInstance.destroy();sky3dInstance=null;}
-    if(pre){pre.classList.add('done');setTimeout(function(){if(pre.parentNode)pre.parentNode.removeChild(pre);},1200);}
+    if(sky3dInstance){try{sky3dInstance.destroy();}catch(e){}sky3dInstance=null;}
+    if(pre){pre.classList.add('done');setTimeout(function(){if(pre.parentNode)pre.parentNode.removeChild(pre);},800);}
     if(wl&&wl.parentNode)wl.parentNode.removeChild(wl);
     window.dispatchEvent(new Event('pre3d:bye'));
     showHero();
   }
+
+  // If user already visited in this session, skip intro instantly
+  if(sessionStorage.getItem('spa_intro_seen')){
+    if(pre&&pre.parentNode)pre.parentNode.removeChild(pre);
+    if(wl&&wl.parentNode)wl.parentNode.removeChild(wl);
+    showHero();
+    return;
+  }
+  sessionStorage.setItem('spa_intro_seen', '1');
+
   if(!pre||!wl){if(pre)pre.style.display='none';if(wl)wl.style.display='none';showHero();return;}
 
   // Initialize real 3D WebGL sky lanterns
@@ -1626,7 +1654,7 @@ function init3DSkyLanterns(){
   // Fallback SVG if WebGL sky was not created
   if(!sky3dInstance){
     var sky=document.getElementById('plSky'),mob=innerWidth<768;
-    var LN=mob?6:11;
+    var LN=mob?4:10;
     for(var i=0;i<LN;i++){
       var d=document.createElement('div');d.className='pln';
       d.style.width=(32+Math.random()*48)+'px';
@@ -1642,34 +1670,51 @@ function init3DSkyLanterns(){
   var start=performance.now(),finished=false,pending=null;
   function run(){
     if(finished)return;finished=true;
+    var burstDelay = isMob ? 220 : 480;
+    var dockDelay = isMob ? 440 : 800;
+    var byeDelay = isMob ? 1600 : 3050;
+    var heroDelay = isMob ? 1850 : 3350;
+
     pre.classList.add('lit');window.dispatchEvent(new Event('pre3d:lit'));
-    setTimeout(function(){pre.classList.add('burst');window.dispatchEvent(new Event('pre3d:burst'));},480);
+    setTimeout(function(){pre.classList.add('burst');window.dispatchEvent(new Event('pre3d:burst'));}, burstDelay);
     setTimeout(function(){
       pre.classList.add('done');
       wl.classList.add('on','go');
       window.dispatchEvent(new Event('pre3d:dock'));
-      if(sky3dInstance){sky3dInstance.destroy();sky3dInstance=null;}
-    },800);
+      if(sky3dInstance){try{sky3dInstance.destroy();}catch(e){}sky3dInstance=null;}
+    }, dockDelay);
     setTimeout(function(){
       wl.classList.add('bye');
-      wl.style.transition='opacity .9s ease .15s';
+      wl.style.transition='opacity .6s ease .1s';
       wl.style.opacity='0';
       window.dispatchEvent(new Event('pre3d:bye'));
-      setTimeout(function(){if(wl.parentNode)wl.parentNode.removeChild(wl);},1100);
-    },3050);
-    setTimeout(showHero,3350);
-    setTimeout(function(){if(wl.parentNode)wl.parentNode.removeChild(wl);},4300);
-    setTimeout(function(){if(pre.parentNode)pre.parentNode.removeChild(pre);},2200);
+      setTimeout(function(){if(wl.parentNode)wl.parentNode.removeChild(wl);},700);
+    }, byeDelay);
+    setTimeout(showHero, heroDelay);
+    setTimeout(function(){if(wl.parentNode)wl.parentNode.removeChild(wl);}, heroDelay + 700);
+    setTimeout(function(){if(pre.parentNode)pre.parentNode.removeChild(pre);}, dockDelay + 800);
   }
   function ready(){
     if(finished)return;
     var el=performance.now()-start;
-    pending=setTimeout(run,Math.max(0,2700-el));
+    var minWait = isMob ? 1000 : 2200;
+    pending=setTimeout(run,Math.max(0,minWait-el));
   }
   if(document.readyState==='complete')ready();
   else window.addEventListener('load',ready);
-  pre.addEventListener('click',function(){if(pending){clearTimeout(pending);pending=null;}run();});
-  setTimeout(function(){if(!finished)killAll();},9000);
+
+  // Tap anywhere to skip intro immediately on mobile or desktop
+  function skipNow(){
+    if(finished)return;
+    if(pending){clearTimeout(pending);pending=null;}
+    killAll();
+  }
+  pre.addEventListener('click', skipNow);
+  pre.addEventListener('touchstart', skipNow, {passive:true});
+  wl.addEventListener('click', skipNow);
+  wl.addEventListener('touchstart', skipNow, {passive:true});
+
+  setTimeout(function(){if(!finished)killAll();}, isMob ? 4500 : 9000);
 })();
 /* ===== PRELOADER 3D LANTERN ===== */
 (function(){
@@ -1677,8 +1722,9 @@ function init3DSkyLanterns(){
   if(!window.THREE){cv.style.display='none';return;}
   var scene=new THREE.Scene();
   var cam=new THREE.PerspectiveCamera(40,1,.1,50);cam.position.z=6.2;
-  var ren=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:true});
-  ren.setPixelRatio(Math.min(devicePixelRatio,2));
+  var isMob = window.innerWidth < 768;
+  var ren=new THREE.WebGLRenderer({canvas:cv,alpha:true,antialias:!isMob,powerPreference:'high-performance'});
+  ren.setPixelRatio(isMob ? 1.0 : Math.min(devicePixelRatio,1.75));
   function size(){var w=cv.clientWidth||340,h=cv.clientHeight||430;ren.setSize(w,h,false);cam.aspect=w/h;cam.updateProjectionMatrix();}
   size();addEventListener('resize',size);
   scene.add(new THREE.AmbientLight(0xFFE7C2,.38));
@@ -1687,7 +1733,8 @@ function init3DSkyLanterns(){
   scene.add(lan);
   var goldTex=mkGlowSprite(1,.5).material.map;
   var sparks=[];
-  for(var s2=0;s2<14;s2++){var s3=new THREE.Sprite(new THREE.SpriteMaterial({map:goldTex,transparent:true,opacity:.5,blending:THREE.AdditiveBlending,depthWrite:false}));var ss2=.1+Math.random()*.16;s3.scale.set(ss2,ss2,1);s3.position.set((Math.random()-.5)*3.4,(Math.random()-.5)*4,-.6);s3.userData={ph:Math.random()*6.28,sp:.25+Math.random()*.45};scene.add(s3);sparks.push(s3);}
+  var sparkCount = isMob ? 6 : 14;
+  for(var s2=0;s2<sparkCount;s2++){var s3=new THREE.Sprite(new THREE.SpriteMaterial({map:goldTex,transparent:true,opacity:.5,blending:THREE.AdditiveBlending,depthWrite:false}));var ss2=.1+Math.random()*.16;s3.scale.set(ss2,ss2,1);s3.position.set((Math.random()-.5)*3.4,(Math.random()-.5)*4,-.6);s3.userData={ph:Math.random()*6.28,sp:.25+Math.random()*.45};scene.add(s3);sparks.push(s3);}
   var t=0,scale=1.12,tScale=1.32,lightT=1.2,glowT=.45,rotY=.5,byeY=0,curY=0,dead=false;
   function stage(s){
     if(s==='lit'){lightT=2.2;glowT=.8;}
@@ -1698,7 +1745,7 @@ function init3DSkyLanterns(){
   addEventListener('pre3d:lit',function(){stage('lit')});
   addEventListener('pre3d:burst',function(){stage('burst')});
   addEventListener('pre3d:dock',function(){stage('dock');cv.classList.add('dock');});
-  addEventListener('pre3d:bye',function(){stage('bye');cv.classList.add('bye');setTimeout(function(){dead=true;if(cv.parentNode)cv.parentNode.removeChild(cv);},1200);});
+  addEventListener('pre3d:bye',function(){stage('bye');cv.classList.add('bye');setTimeout(function(){dead=true;try{ren.dispose();}catch(e){}if(cv.parentNode)cv.parentNode.removeChild(cv);},750);});
   function loop(){
     if(dead)return;
     if(!cv.isConnected){dead=true;return;}
@@ -2011,8 +2058,9 @@ function rBook(){document.getElementById('bsuc').style.display='none';document.g
     var cam = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
     cam.position.set(0, 0, 7.5);
 
-    var ren = new THREE.WebGLRenderer({canvas: cv, alpha: true, antialias: true, powerPreference: 'high-performance'});
-    ren.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    var isMob = window.innerWidth < 768;
+    var ren = new THREE.WebGLRenderer({canvas: cv, alpha: true, antialias: !isMob, powerPreference: 'high-performance'});
+    ren.setPixelRatio(isMob ? Math.min(window.devicePixelRatio || 1, 1.3) : Math.min(window.devicePixelRatio || 1, 2));
 
     // Ambient & Directional Lighting
     var ambLight = new THREE.AmbientLight(0xFFE8D0, 0.75);
@@ -2026,10 +2074,10 @@ function rBook(){document.getElementById('bsuc').style.display='none';document.g
     warmPoint.position.set(0, 0, 0);
     scene.add(warmPoint);
 
-    // 4K Procedural Silk Texture
+    // Procedural Silk Texture (optimized size on mobile)
     var silkTex = (function(){
       var c = document.createElement('canvas');
-      c.width = 1024; c.height = 1024;
+      c.width = isMob ? 512 : 1024; c.height = isMob ? 512 : 1024;
       var ctx = c.getContext('2d');
       var gr = ctx.createLinearGradient(0, 0, 0, 1024);
       gr.addColorStop(0, '#E88B38');
