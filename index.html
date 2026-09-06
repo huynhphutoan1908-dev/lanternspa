@@ -20,12 +20,21 @@
   <script>
   window.addEventListener('error', function(e){
     if(e.target && e.target.tagName === 'IMG'){
-      if(!e.target.dataset.fallback){
-        e.target.dataset.fallback = '1';
-        if(e.target.id === 'lf' || e.target.id === 'mlf' || (e.target.alt && e.target.alt.length === 2)){
-          e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15"><rect width="20" height="15" fill="%23C8874A" rx="2"/><text x="10" y="11" font-size="8" fill="white" font-weight="bold" text-anchor="middle">🌐</text></svg>';
+      var img = e.target;
+      var src = img.getAttribute('src');
+      if(!img.dataset.retried && src && !src.startsWith('data:')){
+        img.dataset.retried = '1';
+        setTimeout(function(){
+          img.src = src;
+        }, 150);
+        return;
+      }
+      if(!img.dataset.fallback){
+        img.dataset.fallback = '1';
+        if(img.id === 'lf' || img.id === 'mlf' || (img.alt && img.alt.length === 2)){
+          img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 20 15"><rect width="20" height="15" fill="%23C8874A" rx="2"/><text x="10" y="11" font-size="8" fill="white" font-weight="bold" text-anchor="middle">🌐</text></svg>';
         } else {
-          e.target.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="240" viewBox="0 0 300 240"><rect width="100%" height="100%" fill="%23F3EDE3"/><circle cx="150" cy="105" r="45" fill="%23EADFCF"/><path d="M150 75c-12 18-16 32 0 42 16-10 12-24 0-42z" fill="%23C8874A" opacity="0.75"/><circle cx="150" cy="98" r="6" fill="%23FFD700"/><text x="150" y="165" font-family="sans-serif" font-size="14" font-weight="600" fill="%23A05E2B" text-anchor="middle">Lantern Spa &amp; Nail</text><text x="150" y="184" font-family="sans-serif" font-size="11" fill="%238C7D73" text-anchor="middle">Hội An · Đà Nẵng</text></svg>';
+          img.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="240" viewBox="0 0 300 240"><rect width="100%" height="100%" fill="%23F3EDE3"/><circle cx="150" cy="105" r="45" fill="%23EADFCF"/><path d="M150 75c-12 18-16 32 0 42 16-10 12-24 0-42z" fill="%23C8874A" opacity="0.75"/><circle cx="150" cy="98" r="6" fill="%23FFD700"/><text x="150" y="165" font-family="sans-serif" font-size="14" font-weight="600" fill="%23A05E2B" text-anchor="middle">Lantern Spa &amp; Nail</text><text x="150" y="184" font-family="sans-serif" font-size="11" fill="%238C7D73" text-anchor="middle">Hội An · Đà Nẵng</text></svg>';
         }
       }
     }
