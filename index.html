@@ -334,6 +334,50 @@ body{top:0!important;position:static!important}
 .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,rgba(200,135,74,.2),rgba(193,123,106,.15));border:1px solid rgba(200,135,74,.3);display:flex;align-items:center;justify-content:center;font-family:var(--sf);font-size:.82rem;font-weight:600;color:var(--gold);transition:var(--tr)}
 .rc:hover .av{transform:scale(1.08);box-shadow:0 0 12px rgba(200,135,74,.25)}
 .aname{font-size:.87rem;font-weight:600;color:var(--iv);margin-bottom:2px}.asub{font-size:.74rem;color:var(--mu)}
+/* OFFERS & TRANSFERS */
+.ud-section{position:relative;z-index:2;background:linear-gradient(180deg,var(--bg) 0%,var(--bg2) 50%,var(--bg) 100%);border-top:1px solid var(--b);border-bottom:1px solid var(--b)}
+.ud-header{text-align:center;max-width:680px;margin:0 auto 48px}
+.ud-chips{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:16px}
+.ud-chip{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;background:rgba(255,255,255,0.7);border:1px solid var(--b);border-radius:100px;font-size:.76rem;color:var(--mu);font-weight:500}
+.ud-chip svg{color:var(--gold)}
+.ud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;align-items:stretch}
+@media(max-width:980px){.ud-grid{grid-template-columns:1fr;gap:20px;max-width:540px;margin:0 auto}}
+.ud-card{display:flex;flex-direction:column;background:var(--c);border:1.5px solid var(--b);border-radius:var(--r3);padding:32px 26px;position:relative;overflow:hidden;transition:var(--tr);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--sh)}
+.ud-card:hover{transform:translateY(-8px);background:var(--ch);border-color:rgba(200,135,74,0.45);box-shadow:var(--sh2)}
+.ud-card.featured{border-color:rgba(200,135,74,0.5);background:linear-gradient(180deg,rgba(255,255,255,0.92) 0%,rgba(248,241,230,0.85) 100%)}
+.ud-tag{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:16px;width:max-content}
+.ud-tag.t1{background:rgba(200,135,74,0.12);color:var(--gold2);border:1px solid rgba(200,135,74,0.3)}
+.ud-tag.t2{background:rgba(46,125,50,0.1);color:#2E7D32;border:1px solid rgba(46,125,50,0.28)}
+.ud-tag.t3{background:rgba(193,123,106,0.14);color:#B74B38;border:1px solid rgba(193,123,106,0.32)}
+.ud-title{font-family:var(--sf);font-size:1.35rem;font-weight:600;color:var(--iv);line-height:1.3;margin-bottom:8px}
+.ud-sub{font-size:.84rem;color:var(--mu);line-height:1.6;margin-bottom:20px;min-height:42px}
+.ud-list{list-style:none;display:flex;flex-direction:column;gap:14px;flex:1;margin-bottom:24px}
+.ud-item{display:flex;align-items:flex-start;gap:14px;padding-bottom:14px;border-bottom:1px dashed var(--b)}
+.ud-item:last-child{border-bottom:none;padding-bottom:0}
+.ud-val{flex-shrink:0;width:66px;padding:8px 4px;border-radius:12px;background:linear-gradient(135deg,rgba(200,135,74,0.16),rgba(232,168,85,0.08));border:1px solid rgba(200,135,74,0.3);text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ud-val b{font-family:var(--sf);font-size:1.15rem;font-weight:700;color:var(--gold2);line-height:1}
+.ud-val span{font-size:.65rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mu);font-weight:600;margin-top:2px}
+.ud-val.val-free{background:linear-gradient(135deg,rgba(46,125,50,0.16),rgba(76,175,80,0.08));border-color:rgba(46,125,50,0.3)}
+.ud-val.val-free b{color:#2E7D32;font-size:.95rem}
+.ud-info{flex:1;min-width:0}
+.ud-service{font-size:.875rem;font-weight:600;color:var(--iv);line-height:1.35;margin-bottom:3px}
+.ud-desc{font-size:.76rem;color:var(--mu);line-height:1.45;margin-bottom:6px}
+.ud-badges{display:flex;flex-wrap:wrap;gap:6px}
+.ud-badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:.68rem;font-weight:600}
+.ud-badge.b-req{background:rgba(42,36,32,0.06);color:var(--iv)}
+.ud-badge.b-solo{background:rgba(200,135,74,0.12);color:var(--gold2)}
+.ud-route{background:rgba(255,255,255,0.65);border:1px dashed rgba(200,135,74,0.35);border-radius:12px;padding:12px 14px;margin-bottom:18px;text-align:center}
+.ud-route-line{font-size:.8rem;font-weight:600;color:var(--iv);display:flex;align-items:center;justify-content:center;gap:6px;flex-wrap:wrap}
+.ud-route-line i{color:var(--gold);font-style:normal}
+.ud-route-or{font-size:.7rem;color:var(--mu);font-style:italic;margin:4px 0}
+.ud-perk{display:flex;align-items:center;gap:10px;padding:11px 14px;background:rgba(200,135,74,0.08);border:1px solid rgba(200,135,74,0.22);border-radius:12px;font-size:.78rem;color:var(--iv);margin-top:auto;margin-bottom:18px}
+.ud-perk svg{width:18px;height:18px;color:var(--gold);flex-shrink:0}
+.ud-btn{width:100%;padding:13px 18px;background:transparent;border:1.5px solid var(--bs);border-radius:var(--r1);color:var(--gold2);font-weight:700;font-size:.85rem;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;transition:var(--tr);display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ss);text-decoration:none}
+.ud-btn:hover{background:linear-gradient(135deg,var(--gold),var(--amber));color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(200,135,74,0.35);transform:translateY(-2px)}
+.ud-btn svg{transition:transform .25s}
+.ud-btn:hover svg{transform:translateX(3px)}
+.ud-fineprint{font-size:.73rem;color:var(--mu);font-style:italic;margin-top:10px;text-align:center}
+
 /* BOOKING */
 .bw{max-width:780px;margin:0 auto;padding:0 24px 96px}
 .bcard{background:var(--c);border:1px solid var(--b);border-radius:var(--r4);padding:52px;backdrop-filter:blur(20px)}
@@ -690,6 +734,7 @@ body.cv-on{background:#FAF7F2}
     </a>
     <nav class="mn" aria-label="Điều hướng chính">
       <a href="menu.html">Menu dịch vụ</a>
+      <a href="#uu-dai">Ưu đãi</a>
       <a href="#ve-tiem">Về tiệm</a>
       <a href="#danh-gia">Đánh giá</a>
       <div class="ldd" id="ldd">
@@ -737,6 +782,7 @@ body.cv-on{background:#FAF7F2}
   </div>
   <div id="mm">
     <a href="menu.html" onclick="tMM()">Menu dịch vụ</a>
+    <a href="#uu-dai" onclick="tMM()">Ưu đãi &amp; Đưa đón</a>
     <a href="#ve-tiem" onclick="tMM()">Về tiệm</a>
     <a href="#danh-gia" onclick="tMM()">Đánh giá</a>
     <a href="#dat-lich" onclick="tMM()" style="background:rgba(201,168,76,.12);border:1px solid var(--bs);color:var(--gold2);text-align:center;margin-top:8px;">Đặt lịch ngay</a>
@@ -955,6 +1001,200 @@ body.cv-on{background:#FAF7F2}
     </div>
   </div>
 </section>
+
+<div class="div"></div>
+
+<!-- SPECIAL OFFERS & FREE TRANSFER -->
+<section id="uu-dai" class="ud-section">
+  <div class="sw">
+    <div style="margin-bottom:52px;text-align:center;" class="pop3d">
+      <div style="width:80px;height:1px;background:linear-gradient(90deg,transparent,var(--bs),transparent);margin:0 auto 16px;"></div>
+      <p class="ey" style="margin-bottom:12px;">Ưu đãi theo mùa &amp; Dịch vụ xe đưa đón</p>
+      <h2 class="sh2">Ưu Đãi Đặc Biệt &amp; Xe Đón Miễn Phí</h2>
+      <p style="font-size:.92rem;color:var(--mu);margin-top:14px;max-width:620px;margin-left:auto;margin-right:auto;line-height:1.75;">
+        Đặt lịch hẹn trước để nhận ưu đãi giảm đến <strong style="color:var(--gold2)">20%</strong> hoặc tận hưởng dịch vụ xe đưa đón tận nơi miễn phí từ Hội An và Đà Nẵng.
+      </p>
+      <div class="ud-chips">
+        <span class="ud-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Đặt trước ít nhất 1-2 tiếng
+        </span>
+        <span class="ud-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Áp dụng 1 ưu đãi / lượt đặt
+        </span>
+        <span class="ud-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Miễn phí giữ hành lý &amp; phòng tắm
+        </span>
+      </div>
+    </div>
+
+    <div class="ud-grid">
+      <!-- CARD 1: BOOK AHEAD & SAVE -->
+      <article class="ud-card pop3d" style="transition-delay:0s">
+        <span class="ud-tag t1">Tự đến tiệm · Không đưa đón</span>
+        <h3 class="ud-title">Đặt Trước &amp; Tiết Kiệm</h3>
+        <p class="ud-sub">Bạn tự ghé Lantern Spa gần phố cổ Hội An (đi bộ, xe đạp hoặc tự túc xe) và nhận mức giảm giá trực tiếp cao nhất.</p>
+        
+        <ul class="ud-list">
+          <li class="ud-item">
+            <div class="ud-val">
+              <b>20%</b>
+              <span>GIẢM</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Massage toàn thân, 90 – 120 phút</div>
+              <div class="ud-desc">Áp dụng Massage Body, Thái, Đá nóng, Bamboo, Signature.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">2 khách trở lên</span>
+                <span class="ud-badge b-solo">Đi 1 người: Giảm 10%</span>
+              </div>
+            </div>
+          </li>
+          <li class="ud-item">
+            <div class="ud-val">
+              <b>15%</b>
+              <span>GIẢM</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Massage toàn thân, 60 phút</div>
+              <div class="ud-desc">Liệu trình thư giãn phục hồi năng lượng tức thì.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">2 khách trở lên</span>
+              </div>
+            </div>
+          </li>
+          <li class="ud-item">
+            <div class="ud-val">
+              <b>15%</b>
+              <span>GIẢM</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Massage chân &amp; Làm Nail / Sơn Gel</div>
+              <div class="ud-desc">Chăm sóc móng nghệ thuật và massage bấm huyệt chân.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">Từ 1 khách</span>
+              </div>
+            </div>
+          </li>
+          <li class="ud-item">
+            <div class="ud-val">
+              <b>15%</b>
+              <span>GIẢM</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Combo trọn gói, Chăm sóc mặt &amp; Gội đầu</div>
+              <div class="ud-desc">Gói làm đẹp thư thái chuyên sâu toàn diện.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">2 khách trở lên</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="ud-perk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 3a2.5 2.5 0 0 0-2.5 2.5c0 1.5 2.5 2.5 2.5 2.5s2.5-1 2.5-2.5A2.5 2.5 0 0 0 12 3z"/></svg>
+          <span><strong>Ưu đãi nhóm:</strong> Giảm thêm 5% cho đoàn từ 4 người lớn.</span>
+        </div>
+
+        <button type="button" class="ud-btn" onclick="selectOffer('direct', 'Đặt trước giảm đến 20% (Tự đến tiệm)')">
+          Đặt chỗ ưu đãi này
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </article>
+
+      <!-- CARD 2: HOI AN TRANSFER (FEATURED) -->
+      <article class="ud-card featured pop3d" style="transition-delay:0.1s">
+        <span class="ud-tag t2">✓ Đón trả tận nơi Hội An</span>
+        <h3 class="ud-title">Đưa Đón Miễn Phí Tại Hội An</h3>
+        <p class="ud-sub">Xe ô tô tiệm đón bạn tận nơi từ khách sạn, resort hoặc homestay ở Hội An và đưa bạn về lại sau khi thư giãn.</p>
+
+        <ul class="ud-list">
+          <li class="ud-item">
+            <div class="ud-val">
+              <b>10%</b>
+              <span>GIẢM</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Massage toàn thân, 90 – 120 phút</div>
+              <div class="ud-desc">Bao gồm cả xe đưa đón khứ hồi (2 chiều) miễn phí.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">2 khách trở lên</span>
+              </div>
+            </div>
+          </li>
+          <li class="ud-item">
+            <div class="ud-val val-free">
+              <b>Free</b>
+              <span>1 CHIỀU</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Massage toàn thân hoặc chân, 60 phút</div>
+              <div class="ud-desc">Chọn hình thức đón đến tiệm HOẶC trả về khách sạn.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">2 khách trở lên</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="ud-perk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 3a2.5 2.5 0 0 0-2.5 2.5c0 1.5 2.5 2.5 2.5 2.5s2.5-1 2.5-2.5A2.5 2.5 0 0 0 12 3z"/></svg>
+          <span><strong>Ưu đãi nhóm:</strong> Giảm thêm 5% cho đoàn từ 4 người lớn.</span>
+        </div>
+
+        <button type="button" class="ud-btn" onclick="selectOffer('hoian', 'Đưa đón miễn phí Hội An (Giảm 10% cho gói từ 90p)')" style="background:linear-gradient(135deg,var(--gold),var(--amber));color:#fff;border-color:transparent;box-shadow:0 6px 20px rgba(200,135,74,.32)">
+          Đặt chỗ ưu đãi này
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </article>
+
+      <!-- CARD 3: DA NANG TRANSFER -->
+      <article class="ud-card pop3d" style="transition-delay:0.2s">
+        <span class="ud-tag t3">+ Xe đón Đà Nẵng ⇄ Hội An</span>
+        <h3 class="ud-title">Đưa Đón Miễn Phí Đà Nẵng</h3>
+        <p class="ud-sub">Di chuyển giữa hai thành phố hoặc vừa đến sân bay? Nghỉ ngơi, gửi hành lý và thư giãn với một buổi massage.</p>
+
+        <div class="ud-route">
+          <div class="ud-route-line">Đà Nẵng <i>→</i> Lantern Spa <i>→</i> Hội An</div>
+          <div class="ud-route-or">hoặc</div>
+          <div class="ud-route-line">Hội An <i>→</i> Lantern Spa <i>→</i> Đà Nẵng</div>
+        </div>
+
+        <ul class="ud-list">
+          <li class="ud-item">
+            <div class="ud-val val-free">
+              <b>Free</b>
+              <span>CẢ 2 CHIỀU</span>
+            </div>
+            <div class="ud-info">
+              <div class="ud-service">Bất kỳ liệu trình massage từ 90 phút trở lên</div>
+              <div class="ud-desc">Xe đón bạn tại Đà Nẵng và trả đến khách sạn Hội An (hoặc ngược lại). Tiết kiệm chi phí taxi.</div>
+              <div class="ud-badges">
+                <span class="ud-badge b-req">2 khách trở lên</span>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="ud-perk">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="13" rx="2"/><path d="M12 8v13M3 12h18M12 3a2.5 2.5 0 0 0-2.5 2.5c0 1.5 2.5 2.5 2.5 2.5s2.5-1 2.5-2.5A2.5 2.5 0 0 0 12 3z"/></svg>
+          <span><strong>Ưu đãi nhóm:</strong> Giảm thêm 5% cho đoàn từ 4 người lớn.</span>
+        </div>
+
+        <p class="ud-fineprint">Khu vực Nam Hội An / Vinpearl tính tương đương tuyến Đà Nẵng.</p>
+
+        <button type="button" class="ud-btn" onclick="selectOffer('danang', 'Đưa đón miễn phí 2 chiều Đà Nẵng ⇄ Hội An (Liệu trình từ 90p)')">
+          Đặt chỗ ưu đãi này
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
 
 <!-- BOOKING -->
 <section id="dat-lich">
@@ -2076,6 +2316,24 @@ function hBS(e){
 
 function oZalo(){dispatchBooking('zalo', lastMsg);}
 function rBook(){document.getElementById('bsuc').style.display='none';document.getElementById('bf').style.display='block';}
+
+function selectOffer(offerType, noteText){
+  var dl = document.getElementById('dat-lich');
+  if(dl){
+    dl.scrollIntoView({behavior:'smooth'});
+  }
+  var fnt = document.getElementById('fnt');
+  if(fnt){
+    var current = fnt.value.trim();
+    if(current.indexOf('[Ưu đãi') === -1){
+      fnt.value = (current ? current + '\n' : '') + '[Ưu đãi: ' + noteText + '] ';
+    }
+  }
+  var fnm = document.getElementById('fnm');
+  if(fnm){
+    setTimeout(function(){ fnm.focus(); }, 450);
+  }
+}
 /* ===== 3D 4K HD HOI AN SILK LANTERN SYSTEM ===== */
 (function(){
   function initLantern(){
@@ -2483,7 +2741,7 @@ function rBook(){document.getElementById('bsuc').style.display='none';document.g
 (function(){
   if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
   if(!matchMedia('(hover:hover)').matches)return;
-  document.querySelectorAll('.sc2,.wc,.rc,.asb').forEach(function(el){
+  document.querySelectorAll('.sc2,.wc,.rc,.asb,.ud-card').forEach(function(el){
     el.classList.add('tilt3d');
     el.addEventListener('mousemove',function(e){
       var r=el.getBoundingClientRect();
@@ -2494,7 +2752,7 @@ function rBook(){document.getElementById('bsuc').style.display='none';document.g
     el.addEventListener('mouseleave',function(){el.style.transform='';});
   });
   /* inner content pops out in 3D */
-  document.querySelectorAll('.sc2 .sb2,.wc>div,.rc>blockquote').forEach(function(inn){
+  document.querySelectorAll('.sc2 .sb2,.wc>div,.rc>blockquote,.ud-card>div').forEach(function(inn){
     inn.classList.add('tilt-inner');
   });
 })();
