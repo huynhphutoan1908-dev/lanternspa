@@ -14,9 +14,10 @@
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230A0A0F'/%3E%3Ctext x='32' y='44' font-family='Georgia' font-size='28' text-anchor='middle' fill='%23FFC93C'%3EL%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://flagcdn.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
-  <script src="three.min.js"></script>
-  <script>if(!window.THREE)document.write('<script src="https:\/\/cdnjs.cloudflare.com\/ajax\/libs\/three.js\/r128\/three.min.js"><\/script>')</script>
+  <script src="three.min.js" defer></script>
   <script>
   window.addEventListener('error', function(e){
     if(e.target && e.target.tagName === 'IMG'){
@@ -148,7 +149,7 @@ body{top:0!important;position:static!important}
 /* HERO 4K 3D UPGRADED */
 .hero{position:relative;min-height:calc(100svh - 76px);display:flex;align-items:center;overflow:hidden;perspective:1200px}
 @media(max-width:900px){.hero{min-height:auto;align-items:flex-start;padding-bottom:36px}}
-.hbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=2000&q=90');background-size:cover;background-position:center 35%;filter:brightness(.56) saturate(.8);transform:scale(1.06);transition:transform 9s cubic-bezier(.16,1,.3,1)}
+.hbg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=75');background-size:cover;background-position:center 35%;filter:brightness(.56) saturate(.8);transform:scale(1.06);transition:transform 9s cubic-bezier(.16,1,.3,1)}
 .hbg.ld{transform:scale(1)}
 .hov{position:absolute;inset:0;background:radial-gradient(circle at 75% 30%, rgba(255,220,140,.18), transparent 60%), linear-gradient(to right,rgba(250,247,242,.98) 0%,rgba(250,247,242,.88) 52%,rgba(250,247,242,.45) 100%)}
 .hovb{position:absolute;bottom:0;left:0;right:0;height:240px;background:linear-gradient(to top,var(--bg),transparent)}
@@ -906,42 +907,42 @@ body.cv-on{background:#FAF7F2}
           <div class="about-slider-track" id="aboutTrack">
             <!-- Slide 1 -->
             <div class="about-slide">
-              <img src="images/storefront.png" alt="Mặt tiền ấm cúng Hội An Lantern Spa &amp; Nail" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/storefront.webp" alt="Mặt tiền ấm cúng Hội An Lantern Spa &amp; Nail" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 2 -->
             <div class="about-slide">
-              <img src="images/customer-couple-fruit.png" alt="Khách quen thưởng thức dừa tươi &amp; trái cây" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/customer-couple-fruit.webp" alt="Khách quen thưởng thức dừa tươi &amp; trái cây" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 3 -->
             <div class="about-slide">
-              <img src="images/customer-friends.png" alt="Hai bạn khách quốc tế thư giãn sau giờ massage" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/customer-friends.webp" alt="Hai bạn khách quốc tế thư giãn sau giờ massage" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 4 -->
             <div class="about-slide">
-              <img src="images/customer-family-staff.png" alt="Đón tiếp chu đáo, thân thiện như người một nhà" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/customer-family-staff.webp" alt="Đón tiếp chu đáo, thân thiện như người một nhà" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 5 -->
             <div class="about-slide">
-              <img src="images/customer-group-coconut.png" alt="Cả gia đình cùng trải nghiệm massage thư giãn" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/customer-group-coconut.webp" alt="Cả gia đình cùng trải nghiệm massage thư giãn" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 6 -->
             <div class="about-slide">
-              <img src="images/customer-nail-mother-daughter.png" alt="Hai mẹ con cùng chăm sóc móng &amp; làm đẹp" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/customer-nail-mother-daughter.webp" alt="Hai mẹ con cùng chăm sóc móng &amp; làm đẹp" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 7 -->
             <div class="about-slide">
-              <img src="images/about-customers.png" alt="Không gian ấm áp dưới ánh đèn lồng Hội An" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/about-customers.webp" alt="Không gian ấm áp dưới ánh đèn lồng Hội An" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
             <!-- Slide 8 -->
             <div class="about-slide">
-              <img src="images/about-nail.jpg" alt="Mẫu nail art hoa nổi đính đá tinh xảo tại tiệm" width="600" height="520" loading="lazy" decoding="async">
+              <img src="images/about-nail.webp" alt="Mẫu nail art hoa nổi đính đá tinh xảo tại tiệm" width="600" height="520" loading="lazy" decoding="async">
               <div class="about-slide-overlay"></div>
             </div>
           </div>
